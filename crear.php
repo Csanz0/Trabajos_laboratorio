@@ -3,7 +3,6 @@
     $BOOK = new Books();
       if(isset($_POST['btnCreate']) && !empty($_POST['name']) && !empty($_POST['comment'])){
          
-
         $BOOK->setBook($_POST['name'],$_POST['comment']); 
         
         $query = "INSERT INTO libros(nombre, comentario) VALUES(:nombre, :comentario)";
@@ -19,14 +18,18 @@
         if ($result) {
             $message = "Libro añadido correctamente";
             header("Location: index.php?message=" .$message);
-            die();
+            exit();
         }else{
             $message = "Ha ocurrido un error. Por favor intente nuevamente";
             header("Location: index.php?message=" .$message);
-            die();
+            exit();
         }
         
-      }   
+      }else{
+            $message = "Ha ocurrido un error. Por favor intente nuevamente";
+            header("Location: index.php?message=" .$message);
+            exit();
+        }
 
 
 ?>
@@ -39,7 +42,7 @@
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
             <div class="formContent">
                 <label for="name">Ingrese el nombre del libro</label>
-                <input type="text" minlength="3" placeholder='Ejem: El principito'>
+                <input type="text" minlength="3" placeholder='Ejem: El principito' name="name" id='name'>
             </div> 
             <div class="formContent">
                 <label for="comment">ingrese una pequeña descripción del libro</label>
