@@ -1,16 +1,31 @@
 <?php require_once('./includes/header.php') ?>
 <?php 
-
-$BOOK = new Books();
+    $BOOK = new Books();
       if(isset($_POST['btnCreate']) && !empty($_POST['name']) && !empty($_POST['comment'])){
          
 
-        $BOOK->getBook($_POST['name'],$_POST['comment']); 
+        $BOOK->setBook($_POST['name'],$_POST['comment']); 
         
-        $BOOK->saveBook();
-        $message = "Libro añadido correctamente";
-        header("Location: index.php?message=" .$message);
-        die();
+        $query = "INSERT INTO libros(nombre, comentario) VALUES(:nombre, :comentario)";
+
+        $stmt = $dataBase->prepare($query);
+
+        $stmt->bindParam(":nombre",$BOOK->getBookName(),PDO::PARAM_STR);     
+
+        $stmt->bindParam(":comentario",$BOOK->getBookComment(),PDO::PARAM_STR);
+
+        $result = $stmt->execute();
+
+        if ($result) {
+            $message = "Libro añadido correctamente";
+            header("Location: index.php?message=" .$message);
+            die();
+        }else{
+            $message = "Ha ocurrido un error. Por favor intente nuevamente";
+            header("Location: index.php?message=" .$message);
+            die();
+        }
+        
       }   
 
 
