@@ -4,6 +4,13 @@
     <h2><a href="crear.php">Añadir nuevo libro</a></h2>
 </header>
 <main>
+    <?php if($_GET['message']){?>
+        <div class="modal">
+            <p><?php echo $_GET['message']?></p>
+            <button id="close">Cerrar</button>
+        </div>
+    
+        <?php } ?>
     <section class="booksView">
         <?php if(!empty($BOOKS)){?>
 
