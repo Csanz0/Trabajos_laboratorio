@@ -1,15 +1,17 @@
 <?php require_once('./includes/header.php') ?>
 <?php 
 
+$BOOK = new Books();
+      if(isset($_POST['btnCreate']) && !empty($_POST['name']) && !empty($_POST['comment'])){
+         
 
-      if(isset($_POST['btnCreate']) && !empty($_POST['name']) && !empty($_POST['commet'])){
-        $BOOK->getBook($_POST['name'],$_POST['commet']); 
+        $BOOK->getBook($_POST['name'],$_POST['comment']); 
         
         $BOOK->saveBook();
         $message = "Libro añadido correctamente";
-        return header("Location: index.php?message" . $message);
-        
-      }     
+        header("Location: index.php?message=" .$message);
+        die();
+      }   
 
 
 ?>
@@ -22,14 +24,14 @@
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="post">
             <div class="formContent">
                 <label for="name">Ingrese el nombre del libro</label>
-                <input type="text" minlength="3" placeholder='El principito'>
+                <input type="text" minlength="3" placeholder='Ejem: El principito'>
             </div> 
             <div class="formContent">
                 <label for="comment">ingrese una pequeña descripción del libro</label>
                 <textarea name="comment" id="comment" cols="40" rows="10" placeholder="Ingrese la descripción del libro" minlength="10" maxlength="100"></textarea>
             </div>
             <div class="formContent">
-             <button type="submit" name="btnCrate" class="btn">Añadir</button>
+             <button type="submit" name="btnCreate" class="btn">Añadir</button>
             </div>
          </form>
     </section>
