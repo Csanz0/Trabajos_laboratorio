@@ -1,5 +1,12 @@
 <?php require_once('./includes/header.php');
 
+    $query = "SELECT * FROM libros";
+
+    $stmt = $dataBase->prepare($query);
+
+    $result = $stmt->execute();
+    
+    $books = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 ?>
 <header class="head">
@@ -13,12 +20,7 @@
             <button id="close">Cerrar</button>
         </div>
         <?php } ?>
-    <?php if(isset($_GET['error'])){?>
-        <div class="modal">
-            <p class="error"><?php echo $_GET['error']?></p>
-            <button id="close">Cerrar</button>
-        </div>
-        <?php } ?>
+
  
     <section class="booksView">
         <?php if(!empty($BOOKS)){?>
