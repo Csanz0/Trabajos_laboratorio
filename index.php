@@ -5,7 +5,7 @@
     $stmt = $dataBase->prepare($query);
 
     $result = $stmt->execute();
-    
+
     $books = $stmt->fetchAll(PDO::FETCH_OBJ);
 
 ?>
@@ -23,21 +23,20 @@
 
  
     <section class="booksView">
-        <?php if(!empty($BOOKS)){?>
+        <?php if(isset($books)){?>
 
-                <?php foreach($BOOKS as $bookName){?>
+                <?php foreach($books as $book){?>
                     <article class="bookCard">
                         <div class="article-div">
-                            <h3><?php echo $_COOKIE[$bookName]?></h3>
+                            <h3><?php  echo $book->nombre; ?></h3>
                             <p class="comment">
-                                <?php echo $_COOKIE['value'] ?>
+                                <?php echo $book->comentario; ?>
                             </p>
                         </div>
                     </article>
 
                  <?php } ?>
-            <?php }else{ ?>
-            <?php echo ""; }?>    
+            <?php }?>   
     </section>    
 </main>
 <?php require_once('./includes/footer.php')?>
