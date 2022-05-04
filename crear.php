@@ -6,8 +6,9 @@
         $BOOK->getBook($_POST['name'],$_POST['commet']); 
         
         $BOOK->saveBook();
-        header("Location:index.php");
-        die();
+        $message = "Libro añadido correctamente";
+        return header("Location: index.php?message" . $message);
+        
       }     
 
 
