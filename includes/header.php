@@ -1,8 +1,6 @@
 <?php 
    date_default_timezone_set('America/Caracas');
-   define('BOOKS',[]);
-
-   Class Books{
+  Class Books{
        public $name;
        public $comment;
        
@@ -21,7 +19,7 @@
                unset($_COOKIE[$this->name]);
                setcookie($this->name, null,-1, "/");
            }
-        } 
+        }  
 ?>
 <!DOCTYPE html>
 <html lang="en">
