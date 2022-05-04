@@ -29,7 +29,7 @@
                 <textarea name="comment" id="comment" cols="40" rows="10" placeholder="Ingrese la descripción del libro" minlength="10" maxlength="100"></textarea>
             </div>
             <div class="formContent">
-                <input type="submit" name="btnCreate">
+             <button type="submit" name="btnCrate" class="btn">Añadir</button>
             </div>
          </form>
     </section>
