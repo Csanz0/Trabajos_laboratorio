@@ -10,6 +10,6 @@
 
     $result = $dataBase->exec($table);
 
-    echo "Tabla creada correctamente";
+    // echo "Tabla creada correctamente";
 
 ?>
