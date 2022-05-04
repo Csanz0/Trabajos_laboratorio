@@ -6,21 +6,19 @@
        public $comment;
        
             
-       function getBook($name, $comment){
+       function setBook($name, $comment){
             $this->name = $name;
             $this->comment = $comment;
-            $BOOKS[] = $this->name;
         } 
 
-           function saveBook(){
-               setcookie($this->name, $this->comment, 0, "/");
-           }
+        function getBookName(){
+         return  $this->name;
+        }
 
-           function deleteBook(){
-               unset($_COOKIE[$this->name]);
-               setcookie($this->name, null,-1, "/");
-           }
-        }  
+        function getBookComment(){
+          return $this->comment;
+        }
+    }  
 ?>
 <!DOCTYPE html>
 <html lang="en">
