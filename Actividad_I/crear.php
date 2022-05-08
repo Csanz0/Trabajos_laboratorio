@@ -40,7 +40,7 @@
                 <input type="text" minlength="3" placeholder='Ejem: El principito' name="name" id='name'>
             </div> 
             <div class="formContent">
-                <label for="comment">ingrese una pequeña descripción del libro</label>
+                <label for="comment">Ingrese una pequeña descripción del libro</label>
                 <textarea name="comment" id="comment" cols="40" rows="10" placeholder="Ingrese la descripción del libro" minlength="10" maxlength="100"></textarea>
             </div>
             <div class="formContent">

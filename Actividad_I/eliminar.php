@@ -41,7 +41,7 @@
 ?>
 <header class="head">
     <h1>Modificar</h1>
-    <h2><a href="index.php">Regresar</a></h2>
+    <a href="index.php">Regresar</a>
 </header>
 <main>
     <div class="mod">
@@ -51,7 +51,7 @@
                 <input type="text" minlength="3" name="name" value='<?php isset($_GET['name'])? print $book->nombre : "";?>' id='name' readonly>
             </div> 
             <div class="formContent">
-                <label for="comment">ingrese una pequeña descripción del libro</label>
+                <label for="comment">Ingrese una pequeña descripción del libro</label>
                 <textarea name="comment" id="comment" cols="40" rows="10" minlength="10" maxlength="100" readonly> <?php isset($_GET['name'])? print $book->comentario : "";?></textarea>
             </div>
             <div class="formContent">

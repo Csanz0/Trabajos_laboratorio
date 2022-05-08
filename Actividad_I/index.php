@@ -11,7 +11,7 @@
 ?>
 <header class="head">
     <h1>Libros añadidos</h1>
-    <h2><a href="crear.php">Añadir nuevo libro</a></h2>
+    <a href="crear.php">Añadir nuevo libro</a>
 </header>
 <main>
     <?php if(isset($_GET['message'])){?>

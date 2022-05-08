@@ -43,7 +43,7 @@
 ?>
 <header class="head">
     <h1>Modificar</h1>
-    <h2><a href="index.php">Regresar</a></h2>
+    <a href="index.php">Regresar</a>
 </header>
 <main>
     <div class="mod">
