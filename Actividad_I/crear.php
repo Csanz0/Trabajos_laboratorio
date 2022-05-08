@@ -24,12 +24,7 @@
             header("Location: index.php?message=" .$message);
             exit();
         }
-        
-      }else{
-            $message = "Ha ocurrido un error. Por favor intente nuevamente";
-            header("Location: index.php?message=" .$message);
-            exit();
-        }
+      }
 
 
 ?>
