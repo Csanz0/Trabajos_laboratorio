@@ -32,6 +32,10 @@
                             <p class="comment">
                                 <?php echo $book->comentario; ?>
                             </p>
+                            <div class="links">
+                                <a href="modificar.php?name=<?php echo $book->nombre?>">Modificar</a>
+                                <a href="eliminar.php?<?php echo $book->nombre?>">Eliminar</a>
+                            </div>
                         </div>
                     </article>
 
