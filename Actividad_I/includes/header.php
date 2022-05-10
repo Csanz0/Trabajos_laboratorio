@@ -50,7 +50,7 @@
 body{
     width: 100vw;
     overflow-x: hidden;
-    background: rgba(255,255,245,0.8);
+    background:#e7eded;
 }
 /* head styles */
 .head {
